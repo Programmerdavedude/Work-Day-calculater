@@ -274,7 +274,7 @@ function GenCell(pValue,pHighLight,pColor)//Generate table cell with value
 
 function Calendar(pDate,pCtrl)
 {
-	//Properties
+	//Propertieste
 	this.Date=pDate.getDate();//selected date
 	this.Month=pDate.getMonth();//selected month number
 	this.Year=pDate.getFullYear();//selected year in 4 digits
@@ -471,13 +471,6 @@ Calendar.prototype.IsLeapYear=IsLeapYear;
 
 function FormatDate(pDate)
 {
-	if /*(this.Format.toUpperCase()=="DDMMYYYY")*/
-	// 	return (pDate+DateSeparator+(this.Month+1)+DateSeparator+this.Year);
-	// else if (this.Format.toUpperCase()=="DDMMMYYYY")
-	// 	return (pDate+DateSeparator+this.GetMonthName(false)+DateSeparator+this.Year);
-	/* else if */(this.Format.toUpperCase()=="MMDDYYYY")
-		return ((this.Month+1)+DateSeparator+pDate+DateSeparator+this.Year);
-	else if (this.Format.toUpperCase()=="MMMDDYYYY")
-		return (this.GetMonthName(false)+DateSeparator+pDate+DateSeparator+this.Year);			
+	return (this.Month+1)+DateSeparator+pDate+DateSeparator+this.Year;
 }
 Calendar.prototype.FormatDate=FormatDate;	
