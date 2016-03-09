@@ -1,10 +1,35 @@
-function workday_count(start,end) {
-  var first = start.clone().endOf('week'); // end of first week
-  var last = end.clone().startOf('week'); // start of last week
-  var days = last.diff(first,'days') * 5 / 7; // this will always multiply of 7
-  var wfirst = first.day() - start.day(); // check first week
-  if(start.day() == 0) --wfirst; // -1 if start with sunday 
-  var wlast = end.day() - last.day(); // check last week
-  if(end.day() == 6) --wlast; // -1 if end with saturday
-  alert(wfirst + days + wlast); // get the total
+function workingDaysBetweenDates(startDate, endDate) {
+  
+    // Validate input
+    if (endDate < startDate)
+        return 0;
+    
+    // Calculate days between dates
+    var millisecondsPerDay = 86400 * 1000; // Day in milliseconds
+    startDate.setHours(0,0,0,1);  // Start just after midnight
+    endDate.setHours(23,59,59,999);  // End just before midnight
+    var diff = endDate - startDate;  // Milliseconds between datetime objects    
+    var days = Math.ceil(diff / millisecondsPerDay);
+    
+    // Subtract two weekend days for every week in between
+    var weeks = Math.floor(days / 7);
+    days = days - (weeks * 3);
+
+    // Handle special cases
+    var startDay = startDate.getDay();
+    var endDay = endDate.getDay();
+    
+    // Remove weekend not previously removed.   
+    if (startDay - endDay > 1)         
+        days = days - 3;      
+    
+    // Remove start day if span starts on Sunday but ends before Saturday
+    if (startDay == 0 && endDay != 6)
+        days = days - 1  
+            
+    // Remove end day if span ends on Saturday but starts after Sunday
+    if (endDay == 6 && startDay != 0)
+        days = days - 1  
+    
+    alert(days);
 }

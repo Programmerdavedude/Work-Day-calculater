@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
  <head>
-     <!--<script language="javascript" type="text/javascript" src="datetimepicker.js"></script>-->
-     <!--<script language="javascript" type="text/javascript" src="datetimepicker2.js"></script>-->
-     <!--<script language="javascript" type="text/javascript" src="calc.js"></script>-->
-     <!--<script>-->
-     <!-- var ftest = ['2015-02-0',1,7];-->
-     <!-- var ltest = ['2015-02-2',2,8];-->
-     <!--</script>-->
+     <script language="javascript" type="text/javascript" src="datetimepicker.js"></script>
+     <script language="javascript" type="text/javascript" src="datetimepicker2.js"></script>
+     <script language="javascript" type="text/javascript" src="cacl.js"></script>
  </head>
  <body>
-     <!--<input id="demo1" type="text" size="25"><a href="javascript:NewCal('demo1','ddmmyyyy')"><img src="cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>-->
-     <!--<input id="demo2" type="text" size="25"><a href="javascript:NewCal2('demo2','ddmmyyyy')"><img src="cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>-->
-     <button onclick="alert("hi")">Click me</button>
+     <input id="demo1" type="text" size="25"><a href="javascript:NewCal('demo1','ddmmyyyy')"><img src="cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+     <input id="demo2" type="text" size="25"><a href="javascript:NewCal2('demo2','ddmmyyyy')"><img src="cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
+     <script>
+      var div1 = document.getElementById("demo1").innerHTML;
+      var div2 = document.getElementById("demo2").innerHTML;
+      var ftest = new Date("div1");
+      var ltest = new Date("div2");
+     </script>
+     <button onclick="workingDaysBetweenDates(ftest, ltest)">Click me</button>
  </body>   
 </html>
