@@ -23,9 +23,9 @@ var exDateTime;//Existing Date and Time
 var cnTop="200";//top coordinate of calendar window.
 var cnLeft="500";//left coordinate of calendar window
 var WindowTitle ="DateTime Picker";//Date Time Picker title.
-var WeekChar=2;//number of character for week day. if 2 then Mo,Tu,We. if 3 then Mon,Tue,Wed.
+var WeekChar=3;//number of character for week day. if 2 then Mo,Tu,We. if 3 then Mon,Tue,Wed.
 var CellWidth=20;//Width of day cell.
-var DateSeparator="-";//Date Separator, you can change it to "/" if you want.
+var DateSeparator="/";//Date Separator, you can change it to "/" if you want.
 var TimeMode=24;//default TimeMode value. 12 or 24
 
 var ShowLongMonth=true;//Show long month name in Calendar header. example: "January".
@@ -292,7 +292,7 @@ function Calendar(pDate,pCtrl)
 		
 	this.MyWindow=winCal;
 	this.Ctrl=pCtrl;
-	this.Format="ddMMyyyy";
+	this.Format="MMDDYYYY";
 	this.Separator=DateSeparator;
 	this.ShowTime=false;
 	if (pDate.getHours()<12)
@@ -471,11 +471,11 @@ Calendar.prototype.IsLeapYear=IsLeapYear;
 
 function FormatDate(pDate)
 {
-	if (this.Format.toUpperCase()=="DDMMYYYY")
-		return (pDate+DateSeparator+(this.Month+1)+DateSeparator+this.Year);
-	else if (this.Format.toUpperCase()=="DDMMMYYYY")
-		return (pDate+DateSeparator+this.GetMonthName(false)+DateSeparator+this.Year);
-	else if (this.Format.toUpperCase()=="MMDDYYYY")
+	if /*(this.Format.toUpperCase()=="DDMMYYYY")*/
+	// 	return (pDate+DateSeparator+(this.Month+1)+DateSeparator+this.Year);
+	// else if (this.Format.toUpperCase()=="DDMMMYYYY")
+	// 	return (pDate+DateSeparator+this.GetMonthName(false)+DateSeparator+this.Year);
+	/* else if */(this.Format.toUpperCase()=="MMDDYYYY")
 		return ((this.Month+1)+DateSeparator+pDate+DateSeparator+this.Year);
 	else if (this.Format.toUpperCase()=="MMMDDYYYY")
 		return (this.GetMonthName(false)+DateSeparator+pDate+DateSeparator+this.Year);			
