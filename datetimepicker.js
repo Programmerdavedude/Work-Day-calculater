@@ -471,6 +471,7 @@ Calendar.prototype.IsLeapYear=IsLeapYear;
 
 function FormatDate(pDate)
 {
-	return (this.Month+1)+DateSeparator+pDate+DateSeparator+this.Year;
+	var date1 = (this.Month+1)+DateSeparator+pDate+DateSeparator+this.Year;
+	return date1;
 }
 Calendar.prototype.FormatDate=FormatDate;	
