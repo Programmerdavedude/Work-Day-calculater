@@ -53,7 +53,7 @@
             $workingDays--;
     }
     return $workingDays;
-    echo '<script type="text/javascript">alert("it will be' . $workingDays . '");</script>';
+    // echo '<script type="text/javascript">alert("it will be' . $workingDays . '");</script>';
 // }
 //Example:
  

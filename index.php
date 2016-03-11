@@ -3,9 +3,17 @@
  <head>
      <script language="javascript" type="text/javascript" src="datetimepicker.js"></script>
      <script language="javascript" type="text/javascript" src="datetimepicker2.js"></script>
-     <?php
-      require 'calc.php';
-     ?>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+     <script>
+      function submit(){
+       $.ajax('calc.php?w1=ftest" + "&w2=ltest', {
+        success: function(response) {
+         var data = "FOOOOOOOOOOOOO";
+         console.log(data);
+        }
+       });
+      }
+     </script>
  </head>
  <body>
      <input id="demo1" type="text" size="25"><a href="javascript:NewCal('demo1','ddmmyyyy')"><img src="cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>
@@ -16,6 +24,6 @@
       var ftest = new Date("div1");
       var ltest = new Date("div2");
      </script>
-     <button onclick="window.location.href = "calc.php?w1=ftest" + "&w2=ltest";">Click me</button>
+     <button onclick="submit()">Click me</button>
  </body>   
 </html>
