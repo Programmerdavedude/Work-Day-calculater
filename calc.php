@@ -2,7 +2,7 @@
 // function getWorkingDays($startDate,$endDate,$holidays) {
     $startdate = $_GET["w1"];
     $endDate = $_GET["w2"];
-    
+    $holidays=array("2008-12-25","2008-12-26","2009-01-01");
     // do strtotime calculations just once
     $endDate = strtotime($endDate);
     $startDate = strtotime($startDate);

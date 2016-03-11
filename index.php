@@ -16,9 +16,6 @@
       var ftest = new Date("div1");
       var ltest = new Date("div2");
      </script>
-     <?php
-      $holidays=array("2008-12-25","2008-12-26","2009-01-01");
-     ?>
      <button onclick="window.location.href = "calc.php?w1=ftest" + "&w2=ltest";">Click me</button>
  </body>   
 </html>
