@@ -25,7 +25,7 @@ var cnLeft="500";//left coordinate of calendar window
 var WindowTitle ="DateTime Picker";//Date Time Picker title.
 var WeekChar=3;//number of character for week day. if 2 then Mo,Tu,We. if 3 then Mon,Tue,Wed.
 var CellWidth=20;//Width of day cell.
-var DateSeparator="/";//Date Separator, you can change it to "/" if you want.
+var DateSeparator="-";//Date Separator, you can change it to "/" if you want.
 var TimeMode=24;//default TimeMode value. 12 or 24
 
 var ShowLongMonth=true;//Show long month name in Calendar header. example: "January".
@@ -471,7 +471,7 @@ Calendar.prototype.IsLeapYear=IsLeapYear;
 
 function FormatDate(pDate)
 {
-	var date2 = (this.Month+1)+DateSeparator+pDate+DateSeparator+this.Year;
+	var date2 = this.Year+DateSeparator+(this.Month+1)+DateSeparator+pDate;
 	return date2;
 }
 Calendar.prototype.FormatDate=FormatDate;	

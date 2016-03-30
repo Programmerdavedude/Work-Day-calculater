@@ -2,6 +2,10 @@
 // function getWorkingDays($startDate,$endDate,$holidays) {
     $startdate = $_GET['w1'];
     $endDate = $_GET['w2'];
+    // echo $startDate;
+    // echo $endDate;
+    // $startDate = "2012-8-15";
+    // $endDate = "2012-8-29";
     $holidays=array("2008-12-25","2008-12-26","2009-01-01");
     // do strtotime calculations just once
     $endDate = strtotime($endDate);
@@ -58,7 +62,7 @@
 
 
     
-    
+$workingdays = 239;
 echo $workingDays;
     // echo '<script type="text/javascript">alert("it will be' . $workingDays . '");</script>';
 // }
